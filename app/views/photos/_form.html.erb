@@ -1,0 +1,22 @@
+<%= simple_form_for @photo, html: { multipart: true } do |f|  %>
+  <% if @photo.errors.any? %>
+    <div id="errors">
+      <h2></h2>
+      <%= pluralize(@photo.errors.count, "error") %>
+      prevented this photo from saving 
+      <ul>
+        <% @photo.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group"></div>
+  <%= f.input :title, input_html: { class: 'form'}  %>
+  <div class="form-group"></div>
+  <%= f.input :content, input_html: { class: 'form'}  %>
+  <%= f.button :submit, class: "button" %>
+<% end %>
+
