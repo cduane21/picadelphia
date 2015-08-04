@@ -1,5 +1,10 @@
 class PhotosController < ApplicationController
+before_action :find_photo, only: [:show, :edit, :update, :destroy]
 	def index
+	end 
+
+	def show 
+		
 	end 
 #creating new photoblogs
 def new 
@@ -8,6 +13,12 @@ end
 
 def create 
 	@photo = Photo.new(photo_params)
+	# when you save the photo blog the right way 
+	if @photo.save 
+		redirect_to @photo, notice: "You did it!"
+	else 
+		render 'new'
+	end 
 end 
 
   # Finds the User with the ID stored in the session with the key
@@ -21,6 +32,9 @@ def photo_params
 	params.require(:photo).permit(:title, :content)
 end 
 
+def find_photo
+	@photo = Photo.find(params[:id])
+end
 
 
 
