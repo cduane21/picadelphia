@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
 before_action :find_photo, only: [:show, :edit, :update, :destroy]
 	def index
+		@photo = Photo.all.order("created_at DESC")
 	end 
 
 	def show 
@@ -19,6 +20,20 @@ def create
 	else 
 		render 'new'
 	end 
+end 
+
+#ability to edit and destroy a photoblog 
+def edit
+end 
+
+def update
+	if @photo.update(photo_params)
+	  redirect_to @photo, notice: "Photo was updated!"
+  else 
+	  render 'edit'
+     end 
+  end
+def destroy 
 end 
 
   # Finds the User with the ID stored in the session with the key
