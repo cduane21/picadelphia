@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Photblog</title>
+  <title>PhotoBlog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+	<!-- once done I will put a if user signed in or signed up -->
+</nav>
+   
    <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: "alert" %>
 <% end %>
