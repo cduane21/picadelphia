@@ -2,8 +2,9 @@
   <% if @photo.errors.any? %>
     <div id="errors">
       <h2></h2>
+      <!-- if their is more than one errors then it will be plualize-->
       <%= pluralize(@photo.errors.count, "error") %>
-      prevented this photo from saving 
+      prevented this photoblog from saving 
       <ul>
         <% @photo.errors.full_messages.each do |msg| %>
           <li>

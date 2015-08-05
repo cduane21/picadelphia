@@ -35,7 +35,9 @@ def update
   end
 def destroy 
 	@photo.destroy
+
 	redirect_to root_path 
+
 end 
 
   # Finds the User with the ID stored in the session with the key
