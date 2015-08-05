@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+	<!-- once done I will put a if user signed in or signed up -->
+</nav>
+   
    <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: "alert" %>
 <% end %>

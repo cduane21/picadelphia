@@ -48,7 +48,7 @@ end
 private 
 
 def photo_params 
-	params.require(:photo).permit(:title, :content)
+	params.require(:photo).permit(:title, :content, :image)
 end 
 
 def find_photo
