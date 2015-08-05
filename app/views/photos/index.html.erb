@@ -1,7 +1,7 @@
-<%= link_to "New PhotoBlog", new_photo_path %>
-
-<%= @photos.each do |photo| %>
+<% @photos.each do |photo| %>
+  <%= link_to (image_tag photo.image.url(:medium)), photo %>
   <h2>
     <%= link_to photo.title, photo %>
   </h2>
 <% end %>
+
