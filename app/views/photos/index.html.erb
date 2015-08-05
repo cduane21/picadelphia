@@ -1,2 +1,6 @@
 <h1> this is the index </h1>
-<h2> <%= link_to photo.title, photo %> </h2>
+<%= @photos.each do |photo| %>
+  <h2>
+    <%= link_to photo.title, photo %>
+  </h2>
+<% end %>

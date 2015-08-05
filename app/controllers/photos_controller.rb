@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 before_action :find_photo, only: [:show, :edit, :update, :destroy]
 	def index
-		@photo = Photo.all.order("created_at DESC")
+		@photos = Photo.all.order("created_at DESC")
 	end 
 
 	def show 
@@ -34,6 +34,8 @@ def update
      end 
   end
 def destroy 
+	@photo.destroy
+	redirect_to root_path 
 end 
 
   # Finds the User with the ID stored in the session with the key
