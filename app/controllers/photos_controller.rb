@@ -9,11 +9,11 @@ before_action :find_photo, only: [:show, :edit, :update, :destroy]
 	end 
 #creating new photoblogs
 def new 
-	@photo = Photo.new 
+	@photo = current_user.photos.build 
 end 
 
 def create 
-	@photo = Photo.new(photo_params)
+	@photo = current_user.photos.build(photo_params)
 	# when you save the photo blog the right way 
 	if @photo.save 
 		redirect_to @photo, notice: "You did it!"
